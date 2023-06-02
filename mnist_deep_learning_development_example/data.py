@@ -31,7 +31,7 @@ class Transforms():
         return encoded_label
 
     def __call__(self, image, label):
-        return self.transform(image), self.onehot(label)
+        return self.transform(image), label
 
 
 class DataModule(pl.LightningDataModule):

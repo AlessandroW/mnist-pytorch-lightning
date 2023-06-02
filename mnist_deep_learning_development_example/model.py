@@ -46,7 +46,7 @@ class Model(pl.LightningModule):
     def _step(self, stage, batch, batch_idx):
         images, y_true = batch
         y_pred = self(images)
-        loss = self.loss(y_pred, y_true.flatten(1))
+        loss = self.loss(y_pred, y_true.long())
         self.log(f"loss/{stage}", loss, prog_bar=True)
         return {"loss": loss,
                 "labels": y_true,
@@ -65,7 +65,7 @@ class Model(pl.LightningModule):
 
     def _epoch_end(self, stage, outputs):
         predictions = torch.hstack([o["preds"] for o in outputs])
-        labels = torch.vstack([o["labels"] for o in outputs]).argmax(axis=1)
+        labels = torch.hstack([o["labels"] for o in outputs])
         total = len(labels)
         accuracy = sum(predictions == labels).item() / total * 100
         error_rate = sum(predictions != labels).item() / total * 100
