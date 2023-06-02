@@ -1,0 +1,12 @@
+- model: mnist_deep_learning_development_example
+  sourcecode:
+    - "*.py"
+  operations:
+    train:
+      main: mnist_deep_learning_development_example.main
+      requires:
+        - file: "mnist-dataset"
+          target-type: link
+      flags:
+        max_epochs:
+          default: 15
