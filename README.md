@@ -1,7 +1,7 @@
-# Deep Learning Development using PyTroch Lightning and Guild.ai
+# Deep Learning Development using PyTorch Lightning and Guild.ai
 
 This repository provides all the necessary code to train a CNN for classifying MNIST images.
-The source code shows how to develop a model using PyTorch Lightning and traing using guild.ai.
+The source code shows how to develop a model using PyTorch Lightning and train it using guild.ai.
 
 ## Setup
 ### Install the dependencies
