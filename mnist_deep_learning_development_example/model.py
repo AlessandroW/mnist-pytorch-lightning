@@ -22,7 +22,7 @@ class CNN(nn.Module):
 class Model(pl.LightningModule):
     @staticmethod
     def add_argparse_args(parent_parser):
-        parser = parent_parser.add_argument_group("DataModule")
+        parser = parent_parser.add_argument_group("Model")
         parser.add_argument("--learning_rate", type=float, default=1e-3)
         return parent_parser
 

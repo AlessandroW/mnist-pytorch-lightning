@@ -10,3 +10,4 @@
       flags:
         max_epochs:
           default: 15
+        learning_rate:
